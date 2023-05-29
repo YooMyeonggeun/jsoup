@@ -56,24 +56,6 @@ public class JsoupService {
 
     public void jsoupservice() {
         List<String> urlliStrings = new ArrayList<>();
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001001003"); //임신/출산
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001001011"); //육아
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001001012"); //자녀교육
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001001001"); //요리
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001001013"); //집/살림
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001001006"); //결혼/가족
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001001013"); //건강에세이/건강기타
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001011003");
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001011002");
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001011007");
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001011010");
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001011021");
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001011017");
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001011016");
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001011006");
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001011014");
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001011013");
-//        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001011015");
         urlliStrings.add("https://www.yes24.com/24/Category/Display/001001011019");
         urlliStrings.add("https://www.yes24.com/24/Category/Display/001001011018");
         urlliStrings.add("https://www.yes24.com/24/Category/Display/001001011011");
@@ -89,6 +71,58 @@ public class JsoupService {
 //        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004009");
 //        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004019");
 //        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004005"); //영어 독해/문법/작문/번역
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004001");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004004");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004002");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004012");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004003");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004010");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004008");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004014");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004006");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004018");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004011");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004016");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004013");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004015");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004007");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004004017");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004003002");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004003002");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004003001");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004003009");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004003004");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004003008");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004003010");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004003005");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004003007");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004005007");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004005010");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004005006");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004005005");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004005001");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004005004");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004005003");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004005008");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004005002");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004005009");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004006005");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004006001");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004006002");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004006006");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004006003");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004006004");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004006008");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004006007");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004007");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004012");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004011");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004010");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004009");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001004020");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001014008");
+        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001014008001004");
+        urlliStrings.add("");
 
 
         Date date = new Date();
