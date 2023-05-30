@@ -22,7 +22,7 @@ public class Jsoup{
     @Column(nullable = false)
     private String author;
 
-    @Column(nullable = false, length = 1000)
+    @Column(nullable = false)
     private String introduction;
 
     @Column(nullable = false)
@@ -34,11 +34,6 @@ public class Jsoup{
     @Column(nullable = false)
     private String category;
 
-    @Column(nullable = false)
-    private String insertion_time;
-
-    @Column(nullable = false)
-    private String modification_time;
 
     public  Jsoup(BookerDto bookerDto) {
         this.book_name = bookerDto.getBook_name();
@@ -48,8 +43,6 @@ public class Jsoup{
         this.star = bookerDto.getStar();
         this.pub_date = bookerDto.getPub_date();
         this.category = bookerDto.getCategory();
-        this.insertion_time = bookerDto.getInsertion_time();
-        this.modification_time = bookerDto.getModification_time();
     }
 
 }

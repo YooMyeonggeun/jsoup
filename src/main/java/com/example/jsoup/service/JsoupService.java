@@ -11,9 +11,7 @@ import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -61,8 +59,7 @@ public class JsoupService {
         try {
             Document doc = conn.get();
             Elements el = doc.select("div#cateLiWrap>ul#mCateLi>li.cate2d>div.subCateLi.clearfix>ul>li>a");
-            System.out.println("사이즈 : "+el.size());
-            for (int i = 0; i < 3; i++) {
+            for (int i = 4; i < 9; i++) {
                 System.out.println(el.get(i).attr("href"));
             }
         } catch (Exception e) {
@@ -81,7 +78,7 @@ public class JsoupService {
         try {
             Document doc = conn.get();
             Elements el = doc.select("div#cateLiWrap>ul#mCateLi>li.cate2d>div.subCateLi.clearfix>ul>li>a");
-            for (int i = 0; i < 9; i++) {
+            for (int i = 0; i < 1; i++) {
                 arrlist.add(el.get(i).attr("href"));
             }
         } catch (Exception e) {
@@ -94,11 +91,6 @@ public class JsoupService {
 
     public void jsoupservice() {
         List<String> urlliStrings = yes24url();
-        Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String insertion_time = formatter.format(date);
-        String modification_time = formatter.format(date);
-
         int counts = 0;
         for (int k = 0; k < urlliStrings.size(); k++) {
             int numbercount = countpage(urlliStrings.get(k));
@@ -133,7 +125,7 @@ public class JsoupService {
                         String introductions = introduction.get(i).text();
                         String starts = star.get(i).text();
                         String pubdate = pub_date.get(i).text();
-                        bookerDto = new BookerDto(booknames, imgurl, authors, publishers, introductions, starts, pubdate, categorys,insertion_time,modification_time);
+                        bookerDto = new BookerDto(booknames, imgurl, authors, publishers, introductions, starts, pubdate, categorys);
                         if(booknames != null && imgurl != null && authors != null &&  publishers != null && introductions != null && starts != null &&  pubdate != null && categorys != null) {
                             jsoupRepository.saveAndFlush(new com.example.jsoup.entity.Jsoup(bookerDto));
                         }else{

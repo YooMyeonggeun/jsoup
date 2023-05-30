@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
-import java.lang.reflect.Field;
-
 @AllArgsConstructor
 @Getter
 @Builder
@@ -18,22 +16,4 @@ public class BookerDto {
     private String star; // 별점
     private String pub_date; // 출판일
     private String category; // 카테고리
-    private String insertion_time; //등록날짜
-    private String modification_time; //수정날짜
-
-
-
-    public boolean isDtoEntireVariableNull() {
-        try {
-            for (Field f : getClass().getDeclaredFields()) {
-                if (f.get(this) != null) {
-                    return false;
-                }
-            }
-            return true;
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
 }
