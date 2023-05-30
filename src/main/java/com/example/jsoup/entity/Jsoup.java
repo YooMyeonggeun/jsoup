@@ -17,6 +17,9 @@ public class Jsoup{
     private String book_name;
 
     @Column(nullable = false)
+    private String publisher;
+
+    @Column(nullable = false)
     private String img_url;
 
     @Column(nullable = false)
@@ -43,6 +46,7 @@ public class Jsoup{
         this.star = bookerDto.getStar();
         this.pub_date = bookerDto.getPub_date();
         this.category = bookerDto.getCategory();
+        this.publisher = bookerDto.getPublisher();
     }
 
 }
