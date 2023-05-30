@@ -53,22 +53,47 @@ public class JsoupService {
         }
     }
 
+
+
+    public void test() {
+        final String inflearnUrl = "https://www.yes24.com/24/Category/Display/001001001";
+        Connection conn = Jsoup.connect(inflearnUrl);
+        try {
+            Document doc = conn.get();
+            Elements el = doc.select("div#cateLiWrap>ul#mCateLi>li.cate2d>div.subCateLi.clearfix>ul>li>a");
+            System.out.println("사이즈 : "+el.size());
+            for (int i = 0; i < 3; i++) {
+                System.out.println(el.get(i).attr("href"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+    // url 가져오는 함수
+    public List<String> yes24url() {
+        final String inflearnUrl = "https://www.yes24.com/24/Category/Display/001001001";
+        Connection conn = Jsoup.connect(inflearnUrl);
+        List<String> arrlist = new ArrayList<>();;
+        try {
+            Document doc = conn.get();
+            Elements el = doc.select("div#cateLiWrap>ul#mCateLi>li.cate2d>div.subCateLi.clearfix>ul>li>a");
+            for (int i = 0; i < 9; i++) {
+                arrlist.add(el.get(i).attr("href"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return arrlist;
+    }
+
+
+
     public void jsoupservice() {
-        List<String> urlliStrings = new ArrayList<>();
-        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001014006008");
-        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001014006001");
-        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001014006004");
-        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001014006002");
-        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001014006003");
-        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001014006006");
-        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001014006007");
-        urlliStrings.add("https://www.yes24.com/24/Category/Display/001001014006009");
-//        urlliStrings.add("");
-//        urlliStrings.add("");
-//        urlliStrings.add("");
-//        urlliStrings.add("");
-
-
+        List<String> urlliStrings = yes24url();
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String insertion_time = formatter.format(date);
@@ -79,7 +104,7 @@ public class JsoupService {
             int numbercount = countpage(urlliStrings.get(k));
             for (int j = 1; j < numbercount + 1; j++) {
                 final String inflearnUrl = urlliStrings.get(k) + "?PageNumber=" + j;
-                Connection conn = Jsoup.connect(inflearnUrl);
+                Connection conn = Jsoup.connect("https://www.yes24.com/"+inflearnUrl);
                 try {
                     Document doc = conn.get();
                     //카테고리
@@ -127,9 +152,10 @@ public class JsoupService {
     }
 
 
+    //마지막페이지 알아보는 함수
     public int countpage(String url) {
         final String inflearnUrlcount = url;
-        Connection conn1 = Jsoup.connect(inflearnUrlcount);
+        Connection conn1 = Jsoup.connect("https://www.yes24.com/"+inflearnUrlcount);
         int numbercount = 0;
         try {
             Document doc = conn1.get();
